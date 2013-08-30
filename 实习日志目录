@@ -1,0 +1,12 @@
+1、欧拉函数，五边形数和整数分拆
+2、Gcd(Fi, Fj)
+3、mobius学习
+4、sigma{ Lcm(i, n) }
+5、sigma{ gcd(i，j) } 1<=i<j<=n
+6、1<=i<=n, 1<=j<=m, gcd(i,j)=p对数
+7、统计gcd(x,y)=k的对数x<=a, y<=b (a,b,c<=10^6)
+8、T次询问， gcd(x,y)=k的对数 (a,b,k <= 50000)
+9、贪心建房子一 (uestc 1817)
+10、贪心建房子二 (uestc 1806)
+11、simpson学习
+12、pollard-rho学习
