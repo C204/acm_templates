@@ -24,4 +24,12 @@
 4、几何： 凸包（graham）， 半平面交
 5、计算方法： FFT， Guass， simpson， simplex
 6、树的结构： 树的分治， lca和rmq， 树链剖分
-7、高级数据结构： splay tree【 考虑是否可用set或BIT替代
+7、高级数据结构： link-cut tree, splay tree【 考虑是否可用set或BIT替代
+
+debug:
+1、数组越界，数组开小
+2、是否爆int爆long long
+3、留心自加自减的地方
+4、检查是否return
+5、注意memset的地方是否没定义大小
+6、找样例= 。=记得用机子输出过程，别犹豫。
