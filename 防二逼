@@ -28,8 +28,8 @@
 7、高级数据结构： link-cut tree, splay tree【 考虑是否可用set或BIT替代
 
 debug:
-1、数组越界，数组开小
-2、是否爆int爆long long
+1、数组越界，数组开小, 是否爆int爆long long
+2、初始化忘了就可以去死了
 3、留心自加自减的地方
 4、检查是否return
 5、注意memset的地方是否没定义大小
