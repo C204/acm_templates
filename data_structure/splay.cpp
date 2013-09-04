@@ -76,7 +76,7 @@ Node *find(int key) {
         x=x->ch[key>x->key];
     }
 }
-Node *rank(int k) {
+Node *select(int k) {
     Node *x=root;
     while(true) {
         x->relax();
@@ -112,12 +112,12 @@ int main() {
         while(m--) {
             int l, r;
             scanf("%s%d%d",cmd,&l,&r);
-            Node *L = rank(l-1), *R = rank(r+1);
+            Node *L = select(l-1), *R = select(r+1);
             splay(L); splay(R, L); Node *want = R->ch[0];
             if(cmd[0] == 'C') {
                 int pos; scanf("%d",&pos);
                 R->setc(0,NULL);R->upd(); L->upd();
-                L = rank(pos); R = rank(pos+1);
+                L = select(pos); R = select(pos+1);
                 splay(L); splay(R, L);
                 R->setc(0,want); R->upd(); L->upd();
             }
