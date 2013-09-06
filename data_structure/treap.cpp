@@ -20,6 +20,9 @@ struct Node {
         c[0]=c[1]=n;
     }
     void upd() { size=cnt+sz(c[0])+sz(c[1]);}
+    ~Node() {
+        delete c[0]; delete c[1];
+    }
 };
 void rot(Node *&t, bool d) {
     Node *c=t->c[d];
@@ -66,11 +69,6 @@ int rank(Node *t, int x) {
     if(x<t->value) return rank(t->c[0],x);
     return r+t->cnt+rank(t->c[1],x);
 }
-void del(Node *&x) {
-    if(x->c[0]) del(x->c[0]);
-    if(x->c[1]) del(x->c[1]);
-    delete x;
-}
 Node* tp[N];
 int a[N], n;
 int lowbit(int x) {return x&(-x);}
@@ -109,7 +107,7 @@ int main() {
                 ins(x, v);del(x, a[x]); a[x] = v;
             }
         }
-        for(int i=1;i<=n;++i) del(tp[i]);
+        for(int i=1;i<=n;++i) delete tp[i];
     }
     return 0;
 }
