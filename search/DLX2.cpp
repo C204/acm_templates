@@ -1,5 +1,5 @@
 /**
-* sjtu 2295
+* hdu 2295
 * 二分 支配集，DLX重复覆盖
 */
 #include <iostream>
