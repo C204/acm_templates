@@ -45,16 +45,18 @@ struct treeList {
             dfs1(v, u);
         }
     }
-    void init() { tim=0;dfs(1); dfs1(1);}
+    void init() { tim=0;dfs(1); dfs1(1); }
     int lca(int u, int v, void f(int, int, int), int k) {
         int tu = top[u], tv = top[v];
-        if(tu == tv) {
-            f(w[u], w[v], k);
-            return dep[u]<dep[v]?u:v;
+        while(tu != tv) {
+            if(dep[tu] < dep[tv]) swap(tu, tv), swap(u, v);
+            f(w[u], w[tu], k);
+            u = fa[tu];
+            tu = top[u];
         }
-        if(dep[tu]>dep[tv]) f(w[u], w[tu], k);
-        else                f(w[v], w[tv], k);
-        return dep[tu]>dep[tv]?lca(fa[tu], v, f, k):lca(u, fa[tv], f, k);
+        if(dep[u] < dep[v]) swap(u, v);
+        f(w[u], w[v], k);
+        return v;
     }
 }TL;
 int a[N];
