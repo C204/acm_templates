@@ -18,7 +18,7 @@ bool CRT(LL b1, LL c1, LL b2, LL c2, LL &b, LL &c) {
     LL g = exgcd(c1, c2, x1, x2);
     if( (b1 - b2) % g )  return false;
     c = c1 / g * c2;
-    b = (c1*x1*b2 + c2*x2*b1) %c;
+    b = (c1/g*x1*b2 + c2/g*x2*b1) %c;
     return true;
 }
 int main () {
